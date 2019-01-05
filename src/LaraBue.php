@@ -10,6 +10,14 @@ use \Illuminate\Support\Arr;
 
 class LaraBue extends Preset
 {
+    /**
+     * Install all.
+     * Clean assets/resources
+     * Update package.json file with necessary dependencies
+     * Update resources directory with needed file
+     * 
+     * @return void
+     */
     public static function install() 
     {
         static::cleanSassDirectory();
@@ -18,17 +26,36 @@ class LaraBue extends Preset
         static::updateResources();
     }
     
+    /**
+     * Clear sass directory in resources
+     * 
+     * @return void
+     */
+    
     public static function cleanSassDirectory() 
     {
         return File::cleanDirectory(resource_path('sass'));
     }
+    
+    /**
+     * Clear JS directory in resources
+     * @return void
+     */
     
     public static function cleanJSDirectory() 
     {
         return File::cleanDirectory(resource_path('js'));
     }
     
-    public static function updatePackageArray($packages) 
+    /**
+     * Placing all necessary packages in package.json file
+     * 
+     * @param array $packages
+     * 
+     * @return mixed
+     */
+    
+    public static function updatePackageArray(array $packages) 
     {
         return array_merge([
             'buefy' => '0.7.1'
@@ -37,6 +64,12 @@ class LaraBue extends Preset
             'jquery'
         ]));
     }
+    
+    /**
+     * Update resources directory with all needed file/components
+     * 
+     * @return void
+     */
     
     public static function updateResources()
     {
