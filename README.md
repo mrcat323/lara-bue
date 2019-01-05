@@ -13,7 +13,26 @@ After that, just try:
 ```BASH
 php artisan preset bue
 ```
-It will automatically load up necessary js files & example component, empty sass file for your custom styles
+It will automatically load up necessary js files & example component, empty sass file for your custom styles.
+
+After that, simply say:
+### For NPM
+```BASH
+npm install
+```
+And re-compile dependencies by:
+```BASH
+npm run dev
+```
+### For YARN
+For yarn is near-exactly the same:
+```BASH
+yarn install
+```
+And re-compiling:
+```BASH
+yarn run dev
+```
 
 ### Troubleshooting
 In case if you got an error after:
