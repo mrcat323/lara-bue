@@ -1,0 +1,26 @@
+{
+    "name": "mrcat323/lara-bue",
+    "description": "Lara-Bue, Buefy + Laravel + Vue Quick Starter",
+    "keywords": ["laravel", "vue", "buefy", "lara-bue", "quick-start", "laravel + vuejs"],
+    "version": "0.6.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mr. CaT",
+            "email": "mrcat323@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "LaraBue\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaraBue\\LaraBueProvider"
+            ]
+        }
+    }
+}
