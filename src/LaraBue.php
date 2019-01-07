@@ -25,6 +25,8 @@ class LaraBue extends Preset
         static::updatePackages();
         static::updateResources();
         static::loadRoutes();
+        static::loadControllers();
+        static::loadViews();
     }
     
     /**
@@ -88,6 +90,8 @@ class LaraBue extends Preset
         // everything including components, we just grab components directory from stubs and copy to resources
         
         File::copyDirectory(__DIR__ . '/stubs/js/components', resource_path('js/components'));
+        
+        File::copyDirectory(__DIR__ . '/stubs/js/router', resource_path('js/router'));
     }
     
     /**
@@ -99,5 +103,15 @@ class LaraBue extends Preset
     public static function loadRoutes()
     {
         copy(__DIR__ . '/routes/main.php', base_path('routes/web.php'));
+    }
+    
+    public static function loadViews()
+    {
+        copy(__DIR__ . '/views/init.blade.php', resource_path('views/init.blade.php'));
+    }
+    
+    public static function loadControllers()
+    {
+        copy(__DIR__ . '/controllers/MainController.php', base_path('app/Http/Controllers/MainController.php'));
     }
 }
