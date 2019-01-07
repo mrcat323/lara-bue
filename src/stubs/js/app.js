@@ -7,13 +7,16 @@ require('./bootstrap')
 import Vue from 'vue'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
+import router from './router'
 
 Vue.use(Buefy)
 
-import StartComponent from './components/StartComponent'
+// now the components turn
 
-Vue.component('start', StartComponent)
+import App from './components/App.vue'
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    components: { App },
+    router
 })
