@@ -58,7 +58,8 @@ class LaraBue extends Preset
     public static function updatePackageArray(array $packages) 
     {
         return array_merge([
-            'buefy' => '0.7.1'
+            'buefy' => '0.7.1',
+            'vue-router' => '3.0.1'
         ], Arr::except($packages, [
             'popper.js',
             'jquery'
