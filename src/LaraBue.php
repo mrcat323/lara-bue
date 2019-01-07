@@ -24,6 +24,7 @@ class LaraBue extends Preset
         static::cleanJSDirectory();
         static::updatePackages();
         static::updateResources();
+        static::loadRoutes();
     }
     
     /**
@@ -39,6 +40,7 @@ class LaraBue extends Preset
     
     /**
      * Clear JS directory in resources
+     * 
      * @return void
      */
     
@@ -86,5 +88,16 @@ class LaraBue extends Preset
         // everything including components, we just grab components directory from stubs and copy to resources
         
         File::copyDirectory(__DIR__ . '/stubs/js/components', resource_path('js/components'));
+    }
+    
+    /**
+     * Loading routes from routes-file and replacing it with the main route-file
+     * 
+     * @return void
+     */
+    
+    public static function loadRoutes()
+    {
+        copy(__DIR__ . '/routes/main.php', base_path('routes/web.php'));
     }
 }
