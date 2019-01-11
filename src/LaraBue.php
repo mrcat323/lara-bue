@@ -105,10 +105,22 @@ class LaraBue extends Preset
         copy(__DIR__ . '/routes/main.php', base_path('routes/web.php'));
     }
     
+    /**
+     * Loading views from our directory to application's resources/views directory
+     * 
+     * @return void
+     */
+    
     public static function loadViews()
     {
         copy(__DIR__ . '/views/init.blade.php', resource_path('views/init.blade.php'));
     }
+    
+    /**
+     * Grabbing all controllers from that directory to application's controllers directory
+     * 
+     * @return void
+     */
     
     public static function loadControllers()
     {
