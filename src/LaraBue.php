@@ -92,20 +92,39 @@ class LaraBue extends Preset
     
     public static function updateResources()
     {
-        // SASS stuff copying
+        // FOR OLDER VERSIONS 
         
-        copy(__DIR__ . '/stubs/sass/app.scss', resource_path('sass/app.scss'));
+        if (static::grabAppVersion() <= 5.6) {
+            // SASS stuff copying
         
-        // JS stuff copying
+            copy(__DIR__ . '/stubs/sass/app.scss', resource_path('assets/sass/app.scss'));
+
+            // JS stuff copying
+
+            copy(__DIR__ . '/stubs/js/app.js', resource_path('assets/js/app.js'));
+            copy(__DIR__ . '/stubs/js/bootstrap.js', resource_path('assets/js/bootstrap.js'));
+
+            // everything including components, we just grab components directory from stubs and copy to resources
+
+            File::copyDirectory(__DIR__ . '/stubs/js/components', resource_path('assets/js/components'));
+
+            File::copyDirectory(__DIR__ . '/stubs/js/router', resource_path('assets/js/router'));
+        } else {
+            // SASS stuff copying
         
-        copy(__DIR__ . '/stubs/js/app.js', resource_path('js/app.js'));
-        copy(__DIR__ . '/stubs/js/bootstrap.js', resource_path('js/bootstrap.js'));
-        
-        // everything including components, we just grab components directory from stubs and copy to resources
-        
-        File::copyDirectory(__DIR__ . '/stubs/js/components', resource_path('js/components'));
-        
-        File::copyDirectory(__DIR__ . '/stubs/js/router', resource_path('js/router'));
+            copy(__DIR__ . '/stubs/sass/app.scss', resource_path('sass/app.scss'));
+
+            // JS stuff copying
+
+            copy(__DIR__ . '/stubs/js/app.js', resource_path('js/app.js'));
+            copy(__DIR__ . '/stubs/js/bootstrap.js', resource_path('js/bootstrap.js'));
+
+            // everything including components, we just grab components directory from stubs and copy to resources
+
+            File::copyDirectory(__DIR__ . '/stubs/js/components', resource_path('js/components'));
+
+            File::copyDirectory(__DIR__ . '/stubs/js/router', resource_path('js/router'));
+        }
     }
     
     /**
