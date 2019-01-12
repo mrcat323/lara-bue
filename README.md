@@ -1,6 +1,10 @@
-# lara-bue: Laravel + Vuejs + Buefy quick starter
+# lara-bue: Laravel + Vuejs + Vue-Router + Buefy quick starter
 ## Lara-Bue - Boost & Beautify your development
 Lara-Bue gives you more power to get started with a project in **Laravel - PHP Framework**
+# v1.2.1
+## CHANGELOG
+* Added Laravel lower versions (as 5.6 & 5.5) support
+* Optimizations
 
 ## Get Started
 
@@ -50,8 +54,5 @@ Buefy is cool stuff, it's *Lightweight UI components for **Vue.js** based on **B
 
 # Contributing
 It will be nice if you contribute to the project, I'll be happy, all of us gonna be happy. Only together we can build more than something, more powerful tools. If you have *idea* or you found the bug, or you just know how to simplify the code, I'll check out your **PRs** :cat2:
-
-## ATTENTION
-**For now this package only works with Laravel 5.7, but don't worry in next updates we gonna fix that and add capability for older versions**
 
 *Thanks for attention, with respect Mr. CaT*
