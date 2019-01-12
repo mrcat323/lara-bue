@@ -51,7 +51,7 @@ class LaraBue extends Preset
     
     public static function cleanSassDirectory() 
     {
-        return File::cleanDirectory(resource_path('sass'));
+        return (static::grabAppVersion() <= 5.6) ? File::cleanDirectory(resource_path('assets/sass')) : File::cleanDirectory(resource_path('sass'));
     }
     
     /**
@@ -62,7 +62,7 @@ class LaraBue extends Preset
     
     public static function cleanJSDirectory() 
     {
-        return File::cleanDirectory(resource_path('js'));
+        return (static::grabAppVersion() <= 5.6) ? File::cleanDirectory(resource_path('assets/js')) : File::cleanDirectory(resource_path('js'));
     }
     
     /**
