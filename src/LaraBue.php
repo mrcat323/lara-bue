@@ -8,6 +8,8 @@ use \Illuminate\Support\Facades\File;
 
 use \Illuminate\Support\Arr;
 
+use \Illuminate\Foundation\Application as App;
+
 class LaraBue extends Preset
 {
     /**
@@ -27,6 +29,18 @@ class LaraBue extends Preset
         static::loadRoutes();
         static::loadControllers();
         static::loadViews();
+    }
+    
+    /**
+     * Grabbing Laravel App version
+     * 
+     * @return float $version
+     */
+    
+    public static function grabAppVersion()
+    {
+        $version = (float) App::VERSION;
+        return $version;
     }
     
     /**
