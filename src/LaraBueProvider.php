@@ -15,6 +15,7 @@ class LaraBueProvider extends ServiceProvider
      *
      * @return void
      */
+    
     public function boot()
     {
         PresetCommand::macro('bue', function ($command) {
