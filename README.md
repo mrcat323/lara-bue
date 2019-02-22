@@ -1,7 +1,7 @@
 # lara-bue: Laravel + Vuejs + Vue-Router + Buefy quick starter
 ## Lara-Bue - Boost & Beautify your development
 Lara-Bue gives you more power to get started with a project in **Laravel - PHP Framework**
-# v1.2.1
+# v1.2.2
 ## CHANGELOG
 * Added Laravel lower versions (as 5.6 & 5.5) support
 * Optimizations
