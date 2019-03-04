@@ -80,7 +80,7 @@ class LaraBue extends Preset
             'buefy' => '0.7.3',
             'vue' => '2.6.8',
             'vue-router' => '3.0.2',
-            'vue-template-compiler' => '2.6.7'
+            'vue-template-compiler' => '2.6.8'
         ], Arr::except($packages, [
             'popper.js',
             'jquery'
