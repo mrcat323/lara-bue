@@ -12,6 +12,15 @@ use \Illuminate\Foundation\Application as App;
 
 class LaraBue extends Preset
 {
+    
+    /**
+     * This helps to know user interests: Install Vuex Store or not
+     *
+     * @var boolean
+     */
+
+    public static $vuex;
+    
     /**
      * Install all.
      * Clean assets/resources
@@ -76,6 +85,11 @@ class LaraBue extends Preset
     
     public static function updatePackageArray(array $packages) 
     {
+        if (static::$vuex) {
+            $packages = array_merge(['vuex' => '3.1.0'], $packages);
+            static::loadStore();
+        }
+        
         return array_merge([
             'buefy' => '0.7.3',
             'vue' => '2.6.8',
@@ -85,6 +99,7 @@ class LaraBue extends Preset
             'popper.js',
             'jquery'
         ]));
+        
     }
     
     /**
@@ -179,5 +194,16 @@ class LaraBue extends Preset
     public static function loadControllers()
     {
         copy(__DIR__ . '/controllers/MainController.php', base_path('app/Http/Controllers/MainController.php'));
+    }
+
+    /**
+     * Loads main Vuex store file into your assets by Laravel versions
+     *
+     * @return void
+     */
+
+    public static function loadStore()
+    {
+        return (static::grabAppVersion() <= 5.6) ? File::copyDirectory(__DIR__ . '/stubs/js/store', resource_path('assets/js/store')) : File::copyDirectory(__DIR__ . '/stubs/js/store', resource_path('js/store'));
     }
 }
