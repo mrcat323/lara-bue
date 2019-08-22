@@ -92,9 +92,9 @@ class LaraBue extends Preset
         
         return array_merge([
             'buefy' => '0.7.3',
-            'vue' => '2.6.8',
+            'vue' => '2.6.10',
             'vue-router' => '3.0.2',
-            'vue-template-compiler' => '2.6.8'
+            'vue-template-compiler' => '2.6.10'
         ], Arr::except($packages, [
             'popper.js',
             'jquery'
