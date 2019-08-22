@@ -86,7 +86,7 @@ class LaraBue extends Preset
     public static function updatePackageArray(array $packages) 
     {
         if (static::$vuex) {
-            $packages = array_merge(['vuex' => '3.1.0'], $packages);
+            $packages = array_merge(['vuex' => '3.1.1'], $packages);
             static::loadStore();
         }
         
