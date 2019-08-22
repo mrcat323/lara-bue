@@ -8,6 +8,7 @@ import Vue from 'vue'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 import router from './router'
+import { store } from './store'
 
 Vue.use(Buefy)
 
@@ -18,5 +19,6 @@ import App from './components/App.vue'
 const app = new Vue({
     el: '#app',
     components: { App },
-    router
+    router,
+    store
 })
