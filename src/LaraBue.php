@@ -91,7 +91,7 @@ class LaraBue extends Preset
         }
         
         return array_merge([
-            'buefy' => '0.7.3',
+            'buefy' => '0.8.2',
             'vue' => '2.6.10',
             'vue-router' => '3.1.2',
             'vue-template-compiler' => '2.6.10'
