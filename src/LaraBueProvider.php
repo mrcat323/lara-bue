@@ -2,11 +2,12 @@
 
 namespace LaraBue;
 
-use Illuminate\Support\ServiceProvider;
+use \Illuminate\Support\ServiceProvider;
 
-use LaraBue\LaraBue;
+use \Illuminate\Foundation\Console\PresetCommand;
 
-use Illuminate\Foundation\Console\PresetCommand;
+use \LaraBue\LaraBue;
+
 
 class LaraBueProvider extends ServiceProvider
 {

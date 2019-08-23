@@ -2,13 +2,14 @@
 
 namespace LaraBue;
 
-use \Illuminate\Foundation\Console\Presets\Preset;
 
-use \Illuminate\Support\Facades\File;
+use \Illuminate\Foundation\Console\Presets\Preset;
 
 use \Illuminate\Support\Arr;
 
 use \Illuminate\Foundation\Application as App;
+
+use File;
 
 class LaraBue extends Preset
 {
