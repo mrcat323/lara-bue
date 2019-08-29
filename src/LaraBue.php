@@ -2,7 +2,6 @@
 
 namespace LaraBue;
 
-
 use \Illuminate\Foundation\Console\Presets\Preset;
 
 use \Illuminate\Support\Arr;
@@ -27,11 +26,11 @@ class LaraBue extends Preset
      * Clean assets/resources
      * Update package.json file with necessary dependencies
      * Update resources directory with needed file
-     * 
+     *
      * @return void
      */
     
-    public static function install() 
+    public static function install()
     {
         static::cleanSassDirectory();
         static::cleanJSDirectory();
@@ -44,7 +43,7 @@ class LaraBue extends Preset
     
     /**
      * Grabbing Laravel App version
-     * 
+     *
      * @return float $version
      */
     
@@ -56,35 +55,35 @@ class LaraBue extends Preset
     
     /**
      * Clear sass directory in resources
-     * 
+     *
      * @return void
      */
     
-    public static function cleanSassDirectory() 
+    public static function cleanSassDirectory()
     {
         return (static::grabAppVersion() <= 5.6) ? File::cleanDirectory(resource_path('assets/sass')) : File::cleanDirectory(resource_path('sass'));
     }
     
     /**
      * Clear JS directory in resources
-     * 
+     *
      * @return void
      */
     
-    public static function cleanJSDirectory() 
+    public static function cleanJSDirectory()
     {
         return (static::grabAppVersion() <= 5.6) ? File::cleanDirectory(resource_path('assets/js')) : File::cleanDirectory(resource_path('js'));
     }
     
     /**
      * Placing all necessary packages in package.json file
-     * 
+     *
      * @param array $packages
-     * 
+     *
      * @return mixed
      */
     
-    public static function updatePackageArray(array $packages) 
+    public static function updatePackageArray(array $packages)
     {
         if (static::$vuex) {
             $packages = array_merge(['vuex' => '3.1.1'], $packages);
@@ -100,12 +99,11 @@ class LaraBue extends Preset
             'popper.js',
             'jquery'
         ]));
-        
     }
     
     /**
      * Update resources directory with all needed file/components
-     * 
+     *
      * @return void
      */
     
@@ -166,7 +164,7 @@ class LaraBue extends Preset
     
     /**
      * Loading routes from routes-file and replacing it with the main route-file
-     * 
+     *
      * @return void
      */
     
@@ -177,7 +175,7 @@ class LaraBue extends Preset
     
     /**
      * Loading views from our directory to application's resources/views directory
-     * 
+     *
      * @return void
      */
     
@@ -188,7 +186,7 @@ class LaraBue extends Preset
     
     /**
      * Grabbing all controllers from that directory to application's controllers directory
-     * 
+     *
      * @return void
      */
     

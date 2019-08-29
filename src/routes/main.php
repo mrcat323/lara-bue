@@ -14,5 +14,5 @@
 // with this kinda stuff we can create dynamic routes via Vue-Router
 
 Route::get('/{any}', function () {
-	return view('init');
+    return view('init');
 })->where('any', '.*');

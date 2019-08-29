@@ -8,7 +8,6 @@ use \Illuminate\Foundation\Console\PresetCommand;
 
 use \LaraBue\LaraBue;
 
-
 class LaraBueProvider extends ServiceProvider
 {
     /**
